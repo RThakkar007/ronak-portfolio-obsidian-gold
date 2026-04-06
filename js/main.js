@@ -140,3 +140,38 @@ window.addEventListener('scroll', () => {
     link.style.color = link.getAttribute('href') === `#${current}` ? 'var(--gold)' : '';
   });
 });
+
+// ===== DARK / LIGHT MODE TOGGLE =====
+(function() {
+  const STORAGE_KEY = 'rt-gold-theme';
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-toggle');
+
+  // Apply saved or system preference on load
+  const saved = localStorage.getItem(STORAGE_KEY);
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initial = saved || (prefersDark ? 'dark' : 'light');
+  root.setAttribute('data-theme', initial);
+
+  // Update particle colors based on theme
+  function updateParticleColors(theme) {
+    if (typeof particles !== 'undefined') {
+      particles.forEach(p => {
+        if (theme === 'light') {
+          p.color = Math.random() > 0.5 ? '#b8760a' : '#d4890a';
+        } else {
+          p.color = Math.random() > 0.5 ? '#f5a623' : '#ffd166';
+        }
+      });
+    }
+  }
+  updateParticleColors(initial);
+
+  btn.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme') || 'dark';
+    const next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem(STORAGE_KEY, next);
+    updateParticleColors(next);
+  });
+})();

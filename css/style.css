@@ -13,6 +13,24 @@
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Space Grotesk', sans-serif;
   --font-body: 'DM Sans', sans-serif;
+  --navbar-scrolled-bg: rgba(13, 13, 13, 0.96);
+  --shadow-card: 0 4px 32px rgba(245,166,35,0.08);
+}
+
+/* ===== LIGHT MODE ===== */
+[data-theme="light"] {
+  --gold: #b8760a;
+  --gold-light: #d4890a;
+  --gold-dark: #8a5500;
+  --bg: #faf8f3;
+  --bg-alt: #f3ede0;
+  --card: #ffffff;
+  --border: rgba(184, 118, 10, 0.2);
+  --border-hover: rgba(184, 118, 10, 0.45);
+  --text: #1a1208;
+  --text-dim: rgba(40, 28, 8, 0.6);
+  --navbar-scrolled-bg: rgba(250, 248, 243, 0.97);
+  --shadow-card: 0 4px 32px rgba(184,118,10,0.12);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -41,7 +59,7 @@ body {
   transition: all 0.4s ease;
 }
 #navbar.scrolled {
-  background: rgba(13, 13, 13, 0.96);
+  background: var(--navbar-scrolled-bg);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
   padding: 12px 0;
@@ -70,8 +88,38 @@ body {
   transition: all 0.3s;
 }
 .nav-cta:hover { background: var(--gold-light); box-shadow: 0 0 24px rgba(245,166,35,0.4); }
+.nav-right { display: flex; align-items: center; gap: 12px; }
 .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
 .hamburger span { display: block; width: 24px; height: 2px; background: var(--gold); transition: all 0.3s; }
+
+/* ===== THEME TOGGLE BUTTON ===== */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-hover);
+  border-radius: 50px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.3s ease;
+  color: var(--gold);
+  line-height: 1;
+  font-family: var(--font-sans);
+}
+.theme-toggle:hover {
+  background: var(--border);
+  box-shadow: 0 0 16px rgba(245,166,35,0.3);
+  transform: scale(1.05);
+}
+.theme-icon { display: none; }
+:root .theme-icon-dark,
+[data-theme="dark"] .theme-icon-dark { display: inline; }
+:root .theme-icon-light,
+[data-theme="dark"] .theme-icon-light { display: none; }
+[data-theme="light"] .theme-icon-dark { display: none; }
+[data-theme="light"] .theme-icon-light { display: inline; }
 
 /* ===== HERO ===== */
 #hero {
