@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ronak Thakkar | Sr. QA Test Engineer</title>
+  <meta name="description" content="Ronak Thakkar — Senior QA Test Engineer with 5+ years of experience at TechMahindra, specializing in quality assurance, test automation, and Agile methodologies." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="noise-overlay"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-r">R</span><span class="logo-t">T</span>
+        <span class="logo-dot">.</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="mailto:theronakthakkar@gmail.com" class="nav-cta">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-container">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <div class="eyebrow-line"></div>
+          <span>Senior Quality Assurance Engineer</span>
+          <div class="eyebrow-line"></div>
+        </div>
+        <h1 class="hero-name">
+          <span class="name-line">Ronak</span>
+          <span class="name-line gold">Thakkar</span>
+        </h1>
+        <div class="hero-role-wrap">
+          <span class="role-dash">—</span>
+          <span id="typed-role" class="hero-role"></span>
+          <span class="cursor">|</span>
+        </div>
+        <p class="hero-desc">
+          Delivering <span class="gold-text">exceptional software quality</span> through strategic testing, automation excellence, and Agile leadership. 5+ years transforming complex systems into reliable, user-centric experiences.
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-gold">Explore My Work</a>
+          <a href="https://d2xsxph8kpxj0f.cloudfront.net/310519663466564135/8vXXi5szhG3rRt8ziSyW9u/Ronak-Sr.QATestEngineer_e63c464b.pdf" target="_blank" class="btn-outline">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/ronak-thakkar5/" target="_blank" class="social-link" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://github.com/Thakkaronak" target="_blank" class="social-link" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="https://bio.link/ronakt" target="_blank" class="social-link" aria-label="Bio Link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </a>
+          <a href="mailto:theronakthakkar@gmail.com" class="social-link" aria-label="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="profile-wrapper">
+          <div class="profile-gold-ring"></div>
+          <div class="profile-circle">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663466564135/8vXXi5szhG3rRt8ziSyW9u/ronak-profile_5f6f72f1.jpg" alt="Ronak Thakkar" class="profile-img" />
+          </div>
+          <div class="profile-badge badge-top">
+            <span class="badge-val">5+</span>
+            <span class="badge-label">Years Exp.</span>
+          </div>
+          <div class="profile-badge badge-bottom">
+            <span class="badge-val">ISTQB</span>
+            <span class="badge-label">Certified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats-bar">
+      <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Years Experience</span></div>
+      <div class="stat-sep"></div>
+      <div class="stat"><span class="stat-num">3×</span><span class="stat-label">Pat on Back Award</span></div>
+      <div class="stat-sep"></div>
+      <div class="stat"><span class="stat-num">ISTQB</span><span class="stat-label">Certified Tester</span></div>
+      <div class="stat-sep"></div>
+      <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Projects Delivered</span></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">About <em>Me</em></h2>
+        <div class="title-rule"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I am a <strong>Senior QA Test Engineer</strong> with over 5 years of hands-on experience delivering software quality across e-commerce, fintech, healthcare, and social platforms.</p>
+          <p>Currently at <strong>TechMahindra</strong>, I lead quality assurance for Meta's social platform features — designing test strategies, mentoring QA teams, and building automation frameworks that reduce regression cycles by 35%.</p>
+          <p>My philosophy: quality is not a phase — it is a culture. I embed testing practices from the earliest stages of development, collaborating closely with product, design, and engineering teams to ship with confidence.</p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="hi-icon">🎯</div>
+              <div><strong>Strategic Thinker</strong><p>Risk-based test planning aligned with business goals</p></div>
+            </div>
+            <div class="highlight-item">
+              <div class="hi-icon">⚡</div>
+              <div><strong>Automation Expert</strong><p>Selenium, Appium, TestNG — CI/CD integrated</p></div>
+            </div>
+            <div class="highlight-item">
+              <div class="hi-icon">🤝</div>
+              <div><strong>Agile Leader</strong><p>Scrum ceremonies, sprint planning, team mentoring</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="about-card-wrap">
+          <div class="gold-card">
+            <div class="gold-card-label">Current Position</div>
+            <div class="gold-card-company">TechMahindra</div>
+            <div class="gold-card-role">Sr. QA Test Engineer</div>
+            <div class="gold-card-divider"></div>
+            <div class="gold-card-row"><span>Location</span><span>Ahmedabad, IN</span></div>
+            <div class="gold-card-row"><span>Email</span><span>theronakthakkar@gmail.com</span></div>
+            <div class="gold-card-row"><span>Phone</span><span>+91 97249 84666</span></div>
+            <div class="gold-card-row"><span>Status</span><span class="status-open">Open to Opportunities</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Technical <em>Skills</em></h2>
+        <div class="title-rule"></div>
+      </div>
+      <div class="skills-layout">
+        <div class="skills-bars-col">
+          <h3 class="skills-col-title">Core Competencies</h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item"><div class="skill-name"><span>Manual Testing</span><span class="skill-pct">95%</span></div><div class="bar"><div class="bar-fill gold-fill" data-w="95"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-name"><span>API Testing</span><span class="skill-pct">88%</span></div><div class="bar"><div class="bar-fill gold-fill" data-w="88"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-name"><span>Test Automation</span><span class="skill-pct">80%</span></div><div class="bar"><div class="bar-fill gold-fill" data-w="80"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-name"><span>Mobile Testing</span><span class="skill-pct">82%</span></div><div class="bar"><div class="bar-fill gold-fill" data-w="82"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-name"><span>Performance Testing</span><span class="skill-pct">72%</span></div><div class="bar"><div class="bar-fill gold-fill" data-w="72"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-name"><span>A11y / i18n Testing</span><span class="skill-pct">85%</span></div><div class="bar"><div class="bar-fill gold-fill" data-w="85"></div></div></div>
+          </div>
+        </div>
+        <div class="skills-tags-col">
+          <h3 class="skills-col-title">Tools & Technologies</h3>
+          <div class="skills-tags">
+            <span class="skill-tag">Selenium WebDriver</span>
+            <span class="skill-tag">Appium</span>
+            <span class="skill-tag">Postman</span>
+            <span class="skill-tag">JIRA</span>
+            <span class="skill-tag">TestNG</span>
+            <span class="skill-tag">JUnit</span>
+            <span class="skill-tag">BrowserStack</span>
+            <span class="skill-tag">Charles Proxy</span>
+            <span class="skill-tag">Git / GitHub</span>
+            <span class="skill-tag">Jenkins</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Android Studio</span>
+            <span class="skill-tag">Xcode</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Agile / Scrum</span>
+            <span class="skill-tag">BDD / TDD</span>
+            <span class="skill-tag">Risk-Based Testing</span>
+            <span class="skill-tag">WCAG 2.1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Work <em>Experience</em></h2>
+        <div class="title-rule"></div>
+      </div>
+      <div class="exp-timeline">
+        <div class="exp-item reveal">
+          <div class="exp-marker"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div class="exp-content">
+            <div class="exp-meta">
+              <div class="exp-company-badge">TM</div>
+              <div>
+                <h3 class="exp-role">Sr. QA Test Engineer</h3>
+                <div class="exp-company">TechMahindra <span class="exp-sep">·</span> <span class="exp-date">Oct 2023 – Present</span></div>
+              </div>
+            </div>
+            <ul class="exp-list">
+              <li>Led end-to-end QA for Meta's social platform features, ensuring 99.9% uptime across web and mobile.</li>
+              <li>Designed comprehensive test plans for payment gateway integrations and A11y compliance across 15+ locales.</li>
+              <li>Mentored 4 junior QA engineers; conducted daily stand-ups and sprint retrospectives in Agile environment.</li>
+              <li>Reduced regression cycle time by 35% through strategic Selenium WebDriver automation.</li>
+              <li>Received <strong class="gold-text">3× Pat on Back Award</strong> for exceptional quality delivery and team leadership.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-item reveal">
+          <div class="exp-marker"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div class="exp-content">
+            <div class="exp-meta">
+              <div class="exp-company-badge">AW</div>
+              <div>
+                <h3 class="exp-role">QA Test Engineer</h3>
+                <div class="exp-company">AddwebSolution <span class="exp-sep">·</span> <span class="exp-date">Jan 2022 – Sep 2023</span></div>
+              </div>
+            </div>
+            <ul class="exp-list">
+              <li>Performed functional, regression, and UAT testing for 6+ client web and mobile applications.</li>
+              <li>Executed API testing using Postman and validated payment flows for e-commerce platforms.</li>
+              <li>Maintained detailed test documentation including test cases, bug reports, and release notes.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-item reveal">
+          <div class="exp-marker"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div class="exp-content">
+            <div class="exp-meta">
+              <div class="exp-company-badge">MI</div>
+              <div>
+                <h3 class="exp-role">QA Engineer</h3>
+                <div class="exp-company">MindInventory <span class="exp-sep">·</span> <span class="exp-date">Jun 2020 – Dec 2021</span></div>
+              </div>
+            </div>
+            <ul class="exp-list">
+              <li>Conducted manual testing for iOS and Android mobile applications using BrowserStack.</li>
+              <li>Performed cross-browser compatibility testing across Chrome, Firefox, Safari, and Edge.</li>
+              <li>Participated in sprint planning, backlog grooming, and retrospectives in Scrum teams.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-item reveal">
+          <div class="exp-marker"><div class="exp-dot"></div></div>
+          <div class="exp-content">
+            <div class="exp-meta">
+              <div class="exp-company-badge">TE</div>
+              <div>
+                <h3 class="exp-role">Jr. QA Tester</h3>
+                <div class="exp-company">TechExtensor <span class="exp-sep">·</span> <span class="exp-date">Jan 2019 – May 2020</span></div>
+              </div>
+            </div>
+            <ul class="exp-list">
+              <li>Executed test cases for web applications and reported bugs using JIRA.</li>
+              <li>Assisted in smoke, sanity, and exploratory testing activities.</li>
+              <li>Gained foundational knowledge of SDLC, STLC, and QA best practices.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Featured <em>Projects</em></h2>
+        <div class="title-rule"></div>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="project-num">01</div>
+          <h3>Meta Social Platform QA</h3>
+          <p>End-to-end quality assurance for Meta's social features — feed, stories, reels, marketplace. Covered A11y, i18n, and payment validation across 15+ locales.</p>
+          <div class="project-tags"><span>Selenium</span><span>JIRA</span><span>BrowserStack</span><span>A11y</span></div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-num">02</div>
+          <h3>E-Commerce Payment Gateway</h3>
+          <p>Comprehensive testing of Stripe, Razorpay, and PayPal integrations. Validated 200+ test scenarios covering success, failure, and edge cases across multiple currencies.</p>
+          <div class="project-tags"><span>Postman</span><span>API Testing</span><span>SQL</span><span>Charles Proxy</span></div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-num">03</div>
+          <h3>Mobile App Automation Suite</h3>
+          <p>Built an Appium-based automation framework for iOS and Android, reducing manual regression effort by 60% and enabling nightly CI/CD test runs via Jenkins.</p>
+          <div class="project-tags"><span>Appium</span><span>TestNG</span><span>Jenkins</span><span>Android Studio</span></div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-num">04</div>
+          <h3>Healthcare Portal Testing</h3>
+          <p>Functional and HIPAA compliance testing for a patient portal. Validated appointment booking, medical records, and telemedicine video call features.</p>
+          <div class="project-tags"><span>Manual Testing</span><span>JIRA</span><span>Postman</span><span>Compliance</span></div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-num">05</div>
+          <h3>Cross-Browser Compatibility Suite</h3>
+          <p>Designed and executed a cross-browser test matrix covering 8 browsers and 12 device configurations, ensuring pixel-perfect UI consistency.</p>
+          <div class="project-tags"><span>BrowserStack</span><span>Selenium</span><span>CSS Validation</span></div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-num">06</div>
+          <h3>i18n & Localization Testing</h3>
+          <p>Led internationalization testing for a SaaS platform across 20+ languages and 30+ locales, validating RTL layouts, date formats, and currency display.</p>
+          <div class="project-tags"><span>i18n</span><span>L10n</span><span>RTL Testing</span><span>Manual Testing</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title">Certifications &amp; <em>Education</em></h2>
+        <div class="title-rule"></div>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-card reveal"><div class="cert-icon">🏆</div><h4>ISTQB Foundation Level</h4><p>International Software Testing Qualifications Board</p></div>
+        <div class="cert-card reveal"><div class="cert-icon">🎯</div><h4>Scrum Master Certified</h4><p>SCRUMstudy — Agile Methodology</p></div>
+        <div class="cert-card reveal"><div class="cert-icon">📮</div><h4>Postman API Testing</h4><p>Postman — API Testing &amp; Automation</p></div>
+        <div class="cert-card reveal"><div class="cert-icon">🔐</div><h4>ISTQB Agile Tester</h4><p>Agile Testing Extension Certificate</p></div>
+        <div class="cert-card reveal"><div class="cert-icon">📱</div><h4>Mobile App Testing</h4><p>Udemy — iOS &amp; Android Testing</p></div>
+        <div class="cert-card reveal"><div class="cert-icon">♿</div><h4>Accessibility Testing</h4><p>WCAG 2.1 &amp; A11y Compliance</p></div>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <div class="edu-year">2017 – 2019</div>
+          <div class="edu-degree">M.Sc. Information Technology</div>
+          <div class="edu-school">Hemchandracharya North Gujarat University</div>
+        </div>
+        <div class="edu-card reveal">
+          <div class="edu-year">2014 – 2017</div>
+          <div class="edu-degree">B.Sc. Information Technology</div>
+          <div class="edu-school">Hemchandracharya North Gujarat University</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2 class="section-title">Get In <em>Touch</em></h2>
+        <div class="title-rule"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-left">
+          <p class="contact-intro">Open to new opportunities, collaborations, and conversations about quality engineering. I typically respond within 24 hours.</p>
+          <div class="contact-items">
+            <a href="mailto:theronakthakkar@gmail.com" class="contact-item"><div class="ci-icon">✉</div><div><div class="ci-label">Email</div><div class="ci-val">theronakthakkar@gmail.com</div></div></a>
+            <a href="tel:+919724984666" class="contact-item"><div class="ci-icon">📞</div><div><div class="ci-label">Phone</div><div class="ci-val">+91 97249 84666</div></div></a>
+            <div class="contact-item"><div class="ci-icon">📍</div><div><div class="ci-label">Location</div><div class="ci-val">Ahmedabad, Gujarat, India</div></div></div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://www.linkedin.com/in/ronak-thakkar5/" target="_blank" class="cs-btn">LinkedIn</a>
+            <a href="https://github.com/Thakkaronak" target="_blank" class="cs-btn">GitHub</a>
+            <a href="https://bio.link/ronakt" target="_blank" class="cs-btn">Bio Link</a>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <div class="form-group"><label>Name</label><input type="text" placeholder="John Doe" required /></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="john@company.com" required /></div>
+          </div>
+          <div class="form-group"><label>Subject</label><input type="text" placeholder="Job Opportunity / Collaboration" /></div>
+          <div class="form-group"><label>Message</label><textarea rows="5" placeholder="Tell me about your project or opportunity..." required></textarea></div>
+          <button type="submit" class="btn-gold" style="width:100%;justify-content:center;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo"><span class="logo-r">R</span><span class="logo-t">T</span><span class="logo-dot">.</span></div>
+        <p class="footer-tagline">Ronak Thakkar &mdash; Building Quality, One Test at a Time.</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/ronak-thakkar5/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/Thakkaronak" target="_blank">GitHub</a>
+          <a href="https://bio.link/ronakt" target="_blank">Bio Link</a>
+          <a href="mailto:theronakthakkar@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2025 Ronak Thakkar. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
