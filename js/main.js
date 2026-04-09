@@ -114,19 +114,119 @@ document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-// ===== CONTACT FORM =====
-document.getElementById('contact-form').addEventListener('submit', (e) => {
+// ===== CONTACT FORM — with Visitor Data Capture =====
+function getDeviceType() {
+  const ua = navigator.userAgent;
+  if (/Mobi|Android|iPhone|iPad|iPod/i.test(ua)) return /iPad|Tablet/i.test(ua) ? 'Tablet' : 'Mobile';
+  return 'Desktop';
+}
+function getBrowserName() {
+  const ua = navigator.userAgent;
+  if (ua.includes('Edg')) return 'Microsoft Edge';
+  if (ua.includes('OPR') || ua.includes('Opera')) return 'Opera';
+  if (ua.includes('Chrome')) return 'Google Chrome';
+  if (ua.includes('Firefox')) return 'Mozilla Firefox';
+  if (ua.includes('Safari')) return 'Safari';
+  return 'Unknown Browser';
+}
+function getOSName() {
+  const ua = navigator.userAgent;
+  if (ua.includes('Windows NT 10')) return 'Windows 10/11';
+  if (ua.includes('Windows')) return 'Windows';
+  if (ua.includes('Mac OS X')) return 'macOS';
+  if (ua.includes('Android')) return 'Android';
+  if (ua.includes('iPhone') || ua.includes('iPad')) return 'iOS';
+  if (ua.includes('Linux')) return 'Linux';
+  return 'Unknown OS';
+}
+
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = e.target.querySelector('button[type="submit"]');
+  const name = document.getElementById('cf-name').value;
+  const email = document.getElementById('cf-email').value;
+  const subject = document.getElementById('cf-subject').value || '(No subject)';
+  const message = document.getElementById('cf-message').value;
+
+  btn.textContent = '⏳ Sending...';
+  btn.disabled = true;
+
+  const visitorData = {
+    browser: getBrowserName(),
+    os: getOSName(),
+    device: getDeviceType(),
+    screenRes: `${screen.width}x${screen.height}`,
+    language: navigator.language || 'N/A',
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'N/A',
+    timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }) + ' IST',
+    referrer: document.referrer || 'Direct',
+    sourceSite: window.location.href,
+    ip: 'Fetching...',
+    city: 'Fetching...',
+    country: 'Fetching...',
+    isp: 'Fetching...'
+  };
+
+  try {
+    const geo = await fetch('https://ipapi.co/json/').then(r => r.json());
+    visitorData.ip = geo.ip || 'N/A';
+    visitorData.city = geo.city || 'N/A';
+    visitorData.country = `${geo.country_name || 'N/A'} (${geo.country_code || ''})`;
+    visitorData.isp = geo.org || 'N/A';
+  } catch (_) {
+    visitorData.ip = 'Unavailable';
+    visitorData.city = 'Unavailable';
+    visitorData.country = 'Unavailable';
+    visitorData.isp = 'Unavailable';
+  }
+
+  const payload = {
+    from_name: name, from_email: email, subject, message,
+    visitor_ip: visitorData.ip, visitor_city: visitorData.city,
+    visitor_country: visitorData.country, visitor_isp: visitorData.isp,
+    visitor_browser: visitorData.browser, visitor_os: visitorData.os,
+    visitor_device: visitorData.device, visitor_screen: visitorData.screenRes,
+    visitor_language: visitorData.language, visitor_timezone: visitorData.timezone,
+    visitor_time: visitorData.timestamp, visitor_referrer: visitorData.referrer,
+    source_site: visitorData.sourceSite
+  };
+  console.log('[Portfolio Contact] Submission payload (ready for EmailJS):', payload);
+
   btn.textContent = '✓ Message Sent!';
-  btn.style.background = '#4ade80';
-  btn.style.color = '#0d0d0d';
+  btn.style.background = 'rgba(245,166,35,0.15)';
+  btn.style.borderColor = 'var(--gold)';
+  btn.style.color = 'var(--gold)';
+
+  const panel = document.getElementById('cf-visitor-data');
+  panel.style.display = 'block';
+  panel.innerHTML = `
+    <div style="margin-top:20px;padding:16px;border:1px solid rgba(245,166,35,0.3);border-radius:4px;background:rgba(245,166,35,0.04);font-family:var(--font-sans);font-size:12px;color:var(--text-dim);">
+      <div style="color:var(--gold);font-weight:700;margin-bottom:10px;font-size:13px;letter-spacing:0.08em;">VISITOR SESSION DATA</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;">
+        <span>IP Address:</span><span style="color:var(--gold);">${visitorData.ip}</span>
+        <span>Location:</span><span style="color:var(--gold);">${visitorData.city}, ${visitorData.country}</span>
+        <span>ISP:</span><span style="color:var(--gold);">${visitorData.isp}</span>
+        <span>Browser:</span><span style="color:var(--gold);">${visitorData.browser}</span>
+        <span>OS:</span><span style="color:var(--gold);">${visitorData.os}</span>
+        <span>Device:</span><span style="color:var(--gold);">${visitorData.device}</span>
+        <span>Screen:</span><span style="color:var(--gold);">${visitorData.screenRes}</span>
+        <span>Timezone:</span><span style="color:var(--gold);">${visitorData.timezone}</span>
+        <span>Language:</span><span style="color:var(--gold);">${visitorData.language}</span>
+        <span>Time:</span><span style="color:var(--gold);">${visitorData.timestamp}</span>
+        <span>Referrer:</span><span style="color:var(--gold);">${visitorData.referrer}</span>
+      </div>
+      <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(245,166,35,0.15);color:rgba(245,166,35,0.5);font-size:11px;">📧 Email delivery: wire up EmailJS to send this payload to ronakenterprise0@gmail.com</div>
+    </div>`;
+
   setTimeout(() => {
     btn.textContent = 'Send Message';
     btn.style.background = '';
+    btn.style.borderColor = '';
     btn.style.color = '';
+    btn.disabled = false;
     e.target.reset();
-  }, 3000);
+    setTimeout(() => { panel.style.display = 'none'; }, 500);
+  }, 8000);
 });
 
 // ===== ACTIVE NAV HIGHLIGHT =====
