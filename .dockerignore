@@ -1,0 +1,9 @@
+.git
+.gitignore
+.github
+k8s
+terraform
+Jenkinsfile
+README.md
+sonar-project.properties
+.dockerignore
